@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <header>
+        <div id="nav-logo-wrapper">
+            <img src="images/logo.png" alt="Deless" id="nav-logo-image" height=100px>
+        </div>
+        <div id="right-part-nav">
+           <div class="nav-item"><a href="#" class="active">Главная</a></div>
+           <div class="nav-item"><a href="#">Ваши ссылки</a></div>
+           <div class="nav-item"><a href="#">Платон Лукьянов</a></div>
+        </div>
+    </header>
+
+    <div id="content">
+            <div id="short-description">
+                <h1 id="site-name">deless</h1>
+                <p id="mini-description">Абсолютно бесплатный быстрый сокращатель ссылок с возможностью аналитики.</p>
+            </div>
+            <div id="target-form">
+                <form action="" method="POST">
+                    <div id="original-link">
+                        <input type="text" id="id_original" class="input" placeholder="Введите длинную ссылку">
+                    </div>
+                    <div id="link-preview">
+                        <div id="preview-domain">deless.ru <span id="preview-slash">/</span> </div> <input type="text" id="id_code" class="input" placeholder="код(необязательно)">
+                    </div>
+                    <input type="submit" value="Сократить!" class="btn shorten-btn">
+                </form>
+            </div>
+    </div>
+    <script src="./js/typewriter.js"></script>
+    <script>
+        var preview_domain = document.getElementById("site-name");
+        var description = document.getElementById("mini-description");
+        
+        type(preview_domain, 400);
+        type(description, 30);
+    </script>
+</body>
+</html>

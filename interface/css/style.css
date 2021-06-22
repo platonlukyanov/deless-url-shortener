@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('reset.css');
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    padding: 0 50px;
+}
+a {
+    color: black;
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+a:hover {
+    color:rgb(5, 222, 255);
+}
+a.active {
+    color:rgb(5, 222, 255);
+    text-decoration: underline;
+    text-underline-offset: 20px;
+}
+
+header {
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+#right-part-nav {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 2px;
+    margin-bottom: 7%;
+}
+
+#content {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#site-name {
+    font-size: 70px;
+}
+
+#target-form {
+    margin-top: 6%;
+}
+
+.input {
+    border: 2px solid black;
+    padding: 10px;
+    transition: border-color 0.5s, border-width 0.1s;
+}
+.input:focus {
+    border-width: 3px;
+    border-color: rgb(5, 222, 255);
+    pointer-events: none;
+}
+
+#id_original {
+    width: 70%;
+    
+}
+
+#link-preview {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+
+}
+#preview-slash {
+    margin-right: 2vh;
+}
+#id_code {
+    font-size: 20px;
+    width: 40%;
+
+}
+
+.btn {
+    color: grey;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 1%;
+    transition-duration: .5;
+}
+
+.shorten-btn {
+    border: none;
+    color: black;
+    margin-top: 5%;
+    padding: 3%;
+    width: 30%;
+    font-size: 25px;
+    background-color: rgb(155,217,234);
+    transition-duration: .5s;
+}
+
+.shorten-btn:hover {
+    background-color: rgb(5, 222, 255);
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 0 10px;
+    }
+    .nav-item {
+        font-size: 12px;
+    }
+    header {
+        width: 100%;
+        flex-direction: column;
+    }
+    #right-part-nav {
+        width: 100%;
+        margin-top: 20px;
+        align-self: center;
+    }
+    #nav-logo-wrapper {
+        align-self: center;
+    }
+
+    #nav-logo-image {
+        height: 50px;
+    }
+    #content {
+        width: 100%;
+    }
+    #id_original {
+        width: 80%;
+    }
+
+    #site-name {
+        font-size: 40px;
+    }
+    #id_code {
+        font-size: 8px;
+    }
+    #link-preview {
+        font-size: 10px;
+    }
+    .shorten-btn {
+        margin-top: 40%;
+        width: 80%;
+    }
+}
