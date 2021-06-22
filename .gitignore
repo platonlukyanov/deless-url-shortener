@@ -1,0 +1,9 @@
+*.pyc
+.idea
+.vscode
+__pycache__
+db.sqlite3
+media
+venv
+admin.py
+secret.py
