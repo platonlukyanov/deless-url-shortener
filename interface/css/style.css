@@ -194,4 +194,17 @@ header {
         margin-top: 40%;
         width: 80%;
     }
+    #shorted {
+        font-size: 20px;
+    }
+    #copy-image {
+        height: 20px;
+    }
+    #information {
+        font-size: 13px;
+    }
+    .underline-select {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
 }
