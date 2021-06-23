@@ -1,0 +1,28 @@
+@import url("style.css");
+
+body {
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+a {
+    color: white;
+}
+
+.input {
+    border-width: 3px;
+    border-color: rgb(0, 135, 133);
+}
+#target-box {
+    border-color: rgb(5, 222, 255);
+}
+#target-box {
+    background-color: white;
+    color: black;
+    border-width: 5px;
+}
+#secret-key {
+    color: white;
+}
+#secret-with-control {
+    background-color: grey;
+}

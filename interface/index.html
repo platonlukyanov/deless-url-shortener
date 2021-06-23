@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" id="light-theme">
+    <link rel="stylesheet" href="css/dark.css" type="text/css" id="dark-theme">
 </head>
 <body>
     <header>
@@ -16,6 +17,7 @@
            <div class="nav-item"><a href="#" class="active">Главная</a></div>
            <div class="nav-item"><a href="#">Ваши ссылки</a></div>
            <div class="nav-item"><a href="#">Платон Лукьянов</a></div>
+           <div class="nav-item"><img src="images/theme/light_mode.svg" alt="" id="theme-changer"></div>
         </div>
     </header>
 
@@ -36,7 +38,9 @@
                 </form>
             </div>
     </div>
-    <script src="./js/typewriter.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/theme-control.js"></script>
+    <script src="js/typewriter.js"></script>
     <script>
         var preview_domain = document.getElementById("site-name");
         var description = document.getElementById("mini-description");
