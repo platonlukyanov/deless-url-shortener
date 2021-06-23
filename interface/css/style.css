@@ -108,6 +108,12 @@ header {
     background-color: rgb(5, 222, 255);
 }
 
+@media (max-width: 1300px) {
+    #right-part-nav {
+        width: 60%;
+    }
+}
+
 @media (max-width: 800px) {
     body {
         padding: 0 10px;
