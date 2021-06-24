@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('reset.css');
-
+html{
+    height: 100%;
+}
 body {
     font-family: 'Roboto Mono', monospace;
     padding: 0 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    height: 95%;
 }
 #theme-changer {
     height: 5%;
@@ -41,12 +43,21 @@ header {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+    flex: 0 0 auto;
 }
 
 footer {
     
     margin-bottom: 1%;
     text-align: center;
+    flex: 0 0 auto;
+}
+#content {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    height: 80%;
+    flex: 1 0 auto;
 }
 div#social {
     width: 30%;
@@ -74,12 +85,7 @@ div#social {
     margin-bottom: 7%;
 }
 
-#content {
-    width: 60%;
-    margin: 0 auto;
-    text-align: center;
-    height: 80%;
-}
+
 
 #site-name {
     margin: 0;
@@ -146,7 +152,10 @@ div#social {
 .shorten-btn:hover {
     background-color: rgb(5, 222, 255);
 }
-
+#created-link {
+    display: flex;
+    flex-direction: column;
+}
 #target-box {
     border: 1px solid black;
     padding: 3%;
@@ -160,10 +169,12 @@ div#social {
 #shorted {
     font-size: 40px;
 }
+#qr {
+    margin-top: 4%;
+}
 
 #information {
     width: 90%;
-    margin-top: 10%;
     text-align: left;
     font-size: 25px;
 }
@@ -178,6 +189,7 @@ div#social {
     -o-transform: translate(0,6px);
     -moz-transform: translate(0,6px); 
 }
+
 @media (max-width: 1300px) {
     #right-part-nav {
         width: 60%;
@@ -189,7 +201,7 @@ div#social {
         padding: 0 10px;
     }
     .nav-item {
-        font-size: 12px;
+        font-size: 20px;
     }
     header {
         width: 100%;
@@ -239,5 +251,46 @@ div#social {
     .underline-select {
         text-decoration: underline;
         text-underline-offset: 2px;
+    }
+    #your-link {
+        font-size: 40px;
+    }
+    #target-link {
+        font-size: 40px;
+    }
+    #copy-image {
+        height: 40px;
+    }
+    #information>h2 {
+        font-size: 30px;
+    }
+    #information>p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 460px) {
+
+    .nav-item {
+        font-size: 10px;
+    }
+    #your-link {
+        font-size: 20px;
+    }
+    #target-box {
+        margin: 0 auto;
+        width: 80%;
+    }
+    #target-link {
+        font-size: 20px;
+    }
+    #copy-image {
+        height: 20px;
+    }
+    #information>h2 {
+        font-size: 20px;
+    }
+    #information>p {
+        font-size: 14px;
     }
 }
