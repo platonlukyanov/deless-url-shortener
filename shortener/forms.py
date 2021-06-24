@@ -16,6 +16,20 @@ class LinkCreateForm(forms.ModelForm):
         model = Link
         fields = ('original',)
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['original'].widget.attrs\
+            .update({
+                'placeholder': 'Введите длинную ссылку',
+                'class': 'input'
+            })
+        self.fields['code'].widget.attrs\
+            .update({
+                'class': 'input',
+                'placeholder': 'код(необязательно)',
+            })
+
+
     def clean_code(self):
         previous_codes = Link.objects.values_list('shorted_link_code', flat=True)
         code = self.cleaned_data["code"]

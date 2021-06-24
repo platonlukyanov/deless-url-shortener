@@ -1,17 +1,31 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Сократить">
-    </form>
+{% extends 'base.html' %}
+{% block title %}Сократить ссылку{% endblock %}
+{% block content %}
+    <div id="short-description">
+        <h1 id="site-name">deless</h1>
+        <p id="mini-description">Абсолютно бесплатный быстрый сокращатель ссылок с возможностью аналитики.</p>
+    </div>
+    <div id="target-form">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div id="original-link">
+                {{ form.original }}
+            </div>
+            <div id="link-preview">
+                <div id="preview-domain">{{ request.META.HTTP_HOST }}<span id="preview-slash">/</span></div>
+                {{ form.code }}
+            </div>
+            {{ form.domain }}
+            <input type="submit" value="Сократить!" class="btn shorten-btn">
+        </form>
+    </div>
+{% endblock %}
+
+{% block after_content %}
     <script>
-        var domain_input = document.getElementById("id_domain"); domain_input.value = "{{ request.META.HTTP_HOST }}";
+        var domain_input = document.getElementById("id_domain");
+        domain_input.value = "{{ request.META.HTTP_HOST }}";
     </script>
-</body>
-</html>
+{% endblock %}
+
+

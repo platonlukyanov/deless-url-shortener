@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Страница{% endblock %} - deless, бесплатный сокращатель ссылок</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css" id="light-theme">
+    <link rel="stylesheet" href="{% static "css/dark.css" %}" type="text/css" id="dark-theme">
+</head>
+<body>
+    <header>
+        <div id="nav-logo-wrapper">
+            <img src="{% static "images/logo.png" %}" alt="deless" id="nav-logo-image" height=100px>
+        </div>
+        <div id="right-part-nav">
+           <div class="nav-item"><a href="#" class="active">Главная</a></div>
+           <div class="nav-item"><a href="#">Ваши ссылки</a></div>
+           <div class="nav-item"><a href="#">Платон Лукьянов</a></div>
+           <div class="nav-item"><img src="{% static "images/theme/light_mode.svg" %}" alt="" id="theme-changer"></div>
+        </div>
+    </header>
+
+    <section id="content">
+            {% block content %}{% endblock %}
+    </section>
+    <footer>
+
+        <div id="social">
+            <div><a href="mailto:platonlukyanoff@ya.ru" target="blank"><img src="{% static "images/social/email.svg" %}" alt="Почта" class="social-icon"></a></div>
+            <div><a href="https://github.com/platonlukyanov/deless-url-shortener"target="blank"><img src="{% static "images/social/github.svg" %}" alt="GitHub" class="social-icon"></a></div>
+            <div><a href="https://twitter.com/LukyanovPlaton" target="blank"><img src="{% static "images/social/twitter.svg" %}" alt="Twitter" class="social-icon"></a></div>
+            <div><a href="https://vk.com/liristium" target="blank"><img src="{% static "images/social/vk.svg" %}" alt="ВКонтакте" class="social-icon"></a></div>
+            <div><a href="https://t.me/platonlukyanov"target="blank"><img src="{% static "images/social/telegram.svg" %}" alt="Телеграм" class="social-icon"></a></div>
+
+        </div>
+    </footer>
+    <script src="{% static "js/theme.js" %}"></script>
+    <script src="{% static "js/theme-control.js" %}"></script>
+    {% block after_content %}
+    {% endblock %}
+</body>
+</html>
