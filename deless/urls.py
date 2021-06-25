@@ -7,7 +7,9 @@ from django.urls import include
 
 urlpatterns = [
     path('', include('shortener.urls')),
+    path('accounts/', include('accounts.urls')),
     path('admin/', admin.site.urls),
+    path('social-auth/', include('social_django.urls', namespace='social')),
 
 ]
 if settings.DEBUG:

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Регистрация{% endblock %}
+{% block content %}
+    <h1>Регистрация</h1>
+    <form action="" method="post" class="auth-form">
+        {% csrf_token %}
+        <div id="registration">
+            {% for field in form.visible_fields %}
+                <div class="label">{{ field.label }}</div>
+                <div>{{ field }}</div>
+
+                <div class="colspan-2">{{ field.errors }}</div>
+            {% endfor %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+        </div>
+        {{ form.next }}
+        <input type="submit" value="Зарегистрироваться" class="btn auth-btn">
+    </form>
+
+{% endblock %}
+{% block after_content %}
+<script>
+        var next_el = document.getElementById("id_next");
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var next = urlParams.get('next')
+        next_el.value = next;
+    </script>
+{% endblock %}

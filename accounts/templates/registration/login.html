@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+    <h1>Вход</h1>
+
+
+    <form action="" method="post" class="auth-form">
+        {% csrf_token %}
+        <div class="registration-with">
+
+            <h2>Войти с</h2>
+            <div class="social-networks-list">
+                <a href="{% url "social:begin" "google-oauth2" %}" class="social-register"><img src="{% static "images/registration-social-icons/google.svg" %}" alt="Google"></a>
+                {# Other Social Authentification will by connected soon #}
+{#                <a href="{% url "social:begin" "google-oauth2" %}" class="social-register"><img src="{% static "images/registration-social-icons/vk.svg" %}" alt="ВК"></a>#}
+{#                <a href="{% url "social:begin" "google-oauth2" %}" class="social-register"><img src="{% static "images/registration-social-icons/facebook.svg" %}" alt="Facebook"></a>#}
+            </div>
+        </div>
+        <div id="registration">
+            <div class="colspan-2">{{ form.non_field_errors }}</div>
+            {% for field in form.visible_fields %}
+                <div class="label">{{ field.label }}</div>
+                <div>{{ field }}</div>
+
+                <div class="colspan-2">{{ field.errors }}</div>
+            {% endfor %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+            <div class="colspan-2"><a href="{% url "password_reset" %}">Забыли пароль?</a></div>
+            <div class="colspan-2">Еще нет аккаунта? <a href="{% url "register" %}" id="register-link">Зарегистрироваться</a></div>
+        </div>
+
+        <input type="submit" value="Войти" class="btn auth-btn">
+    </form>
+{% endblock %}
+{% block after_content %}
+    <script>
+        var next_el = document.getElementById("id_next");
+        var queryString = window.location.search;
+        var register_link = document.getElementById("register-link");
+        register_link.href+=queryString;
+    </script>
+
+{% endblock %}

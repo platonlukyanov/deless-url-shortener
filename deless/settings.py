@@ -25,7 +25,7 @@ SECRET_KEY = secret.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -34,7 +34,7 @@ INSTALLED_APPS = [
 
     # My Apps
     'shortener.apps.ShortenerConfig',
-
+    'accounts.apps.AccountsConfig',
 
     # Django Built-In
     'django.contrib.admin',
@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-Party Apps
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -110,9 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -134,4 +137,24 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+
+# Email Configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'platonioluka2@gmail.com'
+EMAIL_HOST_PASSWORD = "21Dorth777"
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+
+# Auth
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+]
+LOGIN_REDIRECT_URL = '/'
+post_reset_login_backend = "django.contrib.auth.backends.ModelBackend"
+# Google
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = secret.GOOGLE_OAUTH2_KEY
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = secret.GOOGLE_OAUTH2_SECRET
+
 

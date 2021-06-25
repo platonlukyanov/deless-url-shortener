@@ -9,12 +9,14 @@
         <form action="" method="POST">
             {% csrf_token %}
             <div id="original-link">
+                {{ form.original.errors }}
                 {{ form.original }}
             </div>
             <div id="link-preview">
                 <div id="preview-domain">{{ request.META.HTTP_HOST }}<span id="preview-slash">/</span></div>
                 {{ form.code }}
             </div>
+            {{ form.code.errors }}
             {{ form.domain }}
             <input type="submit" value="Сократить!" class="btn shorten-btn">
         </form>

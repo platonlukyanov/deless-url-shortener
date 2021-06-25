@@ -17,7 +17,8 @@
         <div id="right-part-nav">
            <div class="nav-item"><a href="#" class="active">Главная</a></div>
            <div class="nav-item"><a href="#">Ваши ссылки</a></div>
-           <div class="nav-item"><a href="#">Платон Лукьянов</a></div>
+           <div class="nav-item">{% if user.is_authenticated %}<a href="{% url "login" %}">{{ user.username }}</a>{% else %}
+               <a href="{% url "login" %}">Войти</a>{% endif %}</div>
            <div class="nav-item"><img src="{% static "images/theme/light_mode.svg" %}" alt="" id="theme-changer"></div>
         </div>
     </header>
