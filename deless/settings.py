@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     # My Apps
     'shortener.apps.ShortenerConfig',
     'accounts.apps.AccountsConfig',
+    'analytics.apps.AnalyticsConfig',
 
     # Django Built-In
     'django.contrib.admin',
