@@ -7,3 +7,4 @@ media
 venv
 admin.py
 secret.py
+ngrok.exe
